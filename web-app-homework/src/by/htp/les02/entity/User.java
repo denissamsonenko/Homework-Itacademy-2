@@ -5,11 +5,12 @@ public class User {
 	private String surname;
 	private String password;
 	private String mail;
-	private String age;
+	private int age;
 	private String id;
 	private String address;
 	private String city;
-
+	
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -26,7 +27,7 @@ public class User {
 		return mail;
 	}
 
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
 
@@ -58,7 +59,7 @@ public class User {
 		this.mail = mail;
 	}
 
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 
@@ -73,5 +74,6 @@ public class User {
 	public void setCity(String city) {
 		this.city = city;
 	}
+	
 
 }

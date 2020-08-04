@@ -21,6 +21,7 @@ public class Controller extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		process(request, response);
+		
 	}
 
 
@@ -38,7 +39,7 @@ public class Controller extends HttpServlet {
 		user.setSurname(request.getParameter("surname"));
 		user.setId(request.getParameter("id"));
 		user.setPassword(request.getParameter("password"));
-		user.setAge(request.getParameter("age"));
+		user.setAge(Integer.parseInt(request.getParameter("age").toString()));
 		user.setAddress(request.getParameter("address"));
 		user.setCity(request.getParameter("city"));
 		user.setMail(request.getParameter("mail"));

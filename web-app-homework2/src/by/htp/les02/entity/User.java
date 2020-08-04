@@ -1,70 +1,70 @@
 package by.htp.les02.entity;
 
 public class User {
-	private String firstName;
-	private String surname;
-	private String password;
-	private String eMail;
-	private String age;
-	private String id;
-	private String address;
-	private String city;
+	private final String FIRSTNAME;
+	private final String SURNAME;
+	private final String PASSWORD;
+	private final String EMAIL;
+	private final String AGE;
+	private final String ID;
+	private final String ADDRESS;
+	private final String CITY;
 			
 private User(UserBuilder builder) {
-		this.firstName = builder.firstName;
-		this.surname = builder.surname;
-		this.password = builder.password;
-		this.eMail = builder.eMail;
-		this.age = builder.age;
-		this.id = builder.id;
-		this.address = builder.address;
-		this.city = builder.city;
+		this.FIRSTNAME = builder.firstName;
+		this.SURNAME = builder.surname;
+		this.PASSWORD = builder.password;
+		this.EMAIL = builder.eMail;
+		this.AGE = builder.age;
+		this.ID = builder.id;
+		this.ADDRESS = builder.address;
+		this.CITY = builder.city;
 	}
 
-public String getFirstName() {
-	return firstName;
+public String getFIRSTNAME() {
+	return FIRSTNAME;
 }
 
-public String getSurname() {
-	return surname;
+public String getSURNAME() {
+	return SURNAME;
 }
 
-public String getPassword() {
-	return password;
+public String getPASSWORD() {
+	return PASSWORD;
 }
 
-public String geteMail() {
-	return eMail;
+public String getEMAIL() {
+	return EMAIL;
 }
 
-public String getAge() {
-	return age;
+public String getAGE() {
+	return AGE;
 }
 
-public String getId() {
-	return id;
+public String getID() {
+	return ID;
 }
 
-public String getAddress() {
-	return address;
+public String getADDRESS() {
+	return ADDRESS;
 }
 
-public String getCity() { 
-	return city; 
+public String getCITY() { 
+	return CITY; 
 }
 
 @Override
 public int hashCode() {
 	final int prime = 31;
 	int result = 1;
-	result = prime * result + ((address == null) ? 0 : address.hashCode());
-	result = prime * result + ((age == null) ? 0 : age.hashCode());
-	result = prime * result + ((city == null) ? 0 : city.hashCode());
-	result = prime * result + ((eMail == null) ? 0 : eMail.hashCode());
-	result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-	result = prime * result + ((id == null) ? 0 : id.hashCode());
-	result = prime * result + ((password == null) ? 0 : password.hashCode());
-	result = prime * result + ((surname == null) ? 0 : surname.hashCode());
+	result = prime * result + ((ADDRESS == null) ? 0 : ADDRESS.hashCode());
+	result = prime * result + ((AGE == null) ? 0 : AGE.hashCode());
+	result = prime * result + ((CITY == null) ? 0 : CITY.hashCode());
+	result = prime * result + ((EMAIL == null) ? 0 : EMAIL.hashCode());
+	result = prime * result + ((FIRSTNAME == null) ? 0 : FIRSTNAME.hashCode());
+	result = prime * result + ((ID == null) ? 0 : ID.hashCode());
+	result = prime * result + ((PASSWORD == null) ? 0 : PASSWORD.hashCode());
+	result = prime * result + ((SURNAME == null) ? 0 : SURNAME.hashCode());
 	return result;
 }
 
@@ -77,53 +77,53 @@ public boolean equals(Object obj) {
 	if (getClass() != obj.getClass())
 		return false;
 	User other = (User) obj;
-	if (address == null) {
-		if (other.address != null)
+	if (ADDRESS == null) {
+		if (other.ADDRESS != null)
 			return false;
-	} else if (!address.equals(other.address))
+	} else if (!ADDRESS.equals(other.ADDRESS))
 		return false;
-	if (age == null) {
-		if (other.age != null)
+	if (AGE == null) {
+		if (other.AGE != null)
 			return false;
-	} else if (!age.equals(other.age))
+	} else if (!AGE.equals(other.AGE))
 		return false;
-	if (city == null) {
-		if (other.city != null)
+	if (CITY == null) {
+		if (other.CITY != null)
 			return false;
-	} else if (!city.equals(other.city))
+	} else if (!CITY.equals(other.CITY))
 		return false;
-	if (eMail == null) {
-		if (other.eMail != null)
+	if (EMAIL == null) {
+		if (other.EMAIL != null)
 			return false;
-	} else if (!eMail.equals(other.eMail))
+	} else if (!EMAIL.equals(other.EMAIL))
 		return false;
-	if (firstName == null) {
-		if (other.firstName != null)
+	if (FIRSTNAME == null) {
+		if (other.FIRSTNAME != null)
 			return false;
-	} else if (!firstName.equals(other.firstName))
+	} else if (!FIRSTNAME.equals(other.FIRSTNAME))
 		return false;
-	if (id == null) {
-		if (other.id != null)
+	if (ID == null) {
+		if (other.ID != null)
 			return false;
-	} else if (!id.equals(other.id))
+	} else if (!ID.equals(other.ID))
 		return false;
-	if (password == null) {
-		if (other.password != null)
+	if (PASSWORD == null) {
+		if (other.PASSWORD != null)
 			return false;
-	} else if (!password.equals(other.password))
+	} else if (!PASSWORD.equals(other.PASSWORD))
 		return false;
-	if (surname == null) {
-		if (other.surname != null)
+	if (SURNAME == null) {
+		if (other.SURNAME != null)
 			return false;
-	} else if (!surname.equals(other.surname))
+	} else if (!SURNAME.equals(other.SURNAME))
 		return false;
 	return true;
 }
 
 @Override
 public String toString() {
-	return "User [firstName=" + firstName + ", surname=" + surname + ", password=" + password + ", eMail=" + eMail
-			+ ", age=" + age + ", id=" + id + ", address=" + address + ", city=" + city + "]";
+	return "User [firstName=" + FIRSTNAME + ", surname=" + SURNAME + ", password=" + PASSWORD + ", eMail=" + EMAIL
+			+ ", age=" + AGE + ", id=" + ID + ", address=" + ADDRESS + ", city=" + CITY + "]";
 }
 
 
