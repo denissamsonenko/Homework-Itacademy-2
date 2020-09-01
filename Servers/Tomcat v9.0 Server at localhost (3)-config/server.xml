@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="web-app-homework" path="/web-app-homework" reloadable="true" source="org.eclipse.jst.jee.server:web-app-homework"/><Context docBase="web-app-homework2" path="/web-app-homework2" reloadable="true" source="org.eclipse.jst.jee.server:web-app-homework2"/></Host>
+      <Context docBase="web-app-homework" path="/web-app-homework" reloadable="true" source="org.eclipse.jst.jee.server:web-app-homework"/><Context docBase="web-app-homework2" path="/web-app-homework2" reloadable="true" source="org.eclipse.jst.jee.server:web-app-homework2"/><Context docBase="forward_vs-redirect" path="/forward_vs-redirect" reloadable="true" source="org.eclipse.jst.jee.server:forward_vs-redirect"/><Context docBase="my-web-app-f5" path="/my-web-app-f5" reloadable="true" source="org.eclipse.jst.jee.server:my-web-app-f5"/><Context docBase="my-web-app-jstl" path="/my-web-app-jstl" reloadable="true" source="org.eclipse.jst.jee.server:my-web-app-jstl"/><Context docBase="my-webb-app-larchit" path="/my-webb-app-larchit" reloadable="true" source="org.eclipse.jst.jee.server:my-webb-app-larchit"/></Host>
     </Engine>
   </Service>
 </Server>
