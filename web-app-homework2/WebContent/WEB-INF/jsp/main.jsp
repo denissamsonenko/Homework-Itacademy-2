@@ -21,8 +21,7 @@
 		<tr style="background: snow">
 			<td>
 			<jsp:useBean id="user" class="by.htp.les02.entity.User" scope="request" />
-				<jsp:getProperty property="firstName" name="user"/>
-			</td>
+			<jsp:getProperty property="firstName" name="user"/></td>
 			<td><jsp:getProperty property="surname" name="user"/></td>
 			<td><jsp:getProperty property="password" name="user"/></td>
 			<td><jsp:getProperty property="id" name="user"/></td>

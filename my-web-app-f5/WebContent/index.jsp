@@ -8,9 +8,9 @@
 </head>
 <body>
 	<form action="controller" method="post" >
-		<input type="hidden" name="command" value="save_new_user" />		
-		<input type="text" name="firstName" maxlength="12" placeholder="name" autofocus value="" /> <br>
-		<input type="text" name="surname" maxlength="12" placeholder="surname" value="" /> <br>
+		<input type="hidden" name="command" value="save_news" />		
+		<input type="text" name="title" maxlength="12" placeholder="title" autofocus value="" /> <br>
+		<input type="text" name="brief" maxlength="12" placeholder="brief" value="" /> <br>
 		
 		<input type="submit" name="sub" value="Send" /> <br>
 	</form>

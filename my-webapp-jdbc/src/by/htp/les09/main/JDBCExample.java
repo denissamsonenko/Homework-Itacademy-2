@@ -14,8 +14,6 @@ public class JDBCExample {
 	    
 	    try {
 	      Class.forName("com.mysql.cj.jdbc.Driver");
-//	      Class.forName("oracle.jdbc.driver.OracleDriver");
-//	      Class.forName("com.mysql.jdbc.Driver");
 	      con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/jd2-firstdb?useSSL=false","root", "24041987");
 
 	      String sql = "INSERT INTO users(login, name, surname) VALUES(?,?,?)";
