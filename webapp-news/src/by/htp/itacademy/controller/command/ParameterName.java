@@ -2,5 +2,6 @@ package by.htp.itacademy.controller.command;
 
 public enum ParameterName {
 
-	SAVE_NEWS
+	SAVE_NEWS,
+	SHOW_NEWS
 }

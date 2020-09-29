@@ -14,7 +14,6 @@ public class News implements Serializable{
 	
 	public News() {	
 	}
-
 	
 	public News(String title, String brief, String content, LocalDate date) {
 		this.title = title;
@@ -23,7 +22,6 @@ public class News implements Serializable{
 		this.date = date;
 	}
 	
-
 	public News(int id, String title, String brief, String content, LocalDate date) {
 		super();
 		this.id = id;

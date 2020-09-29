@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.epam.tc.com/student"
+	xmlns:tns="http://www.epam.tc.com/student">
+
+	<element name="students">
+		<complexType>
+			<sequence>
+				<element name="student" type="tns:StudentType" minOccurs="1"
+					maxOccurs="unbounded" />
+				<element name="address" type="tns:AddressType" minOccurs="1"
+					maxOccurs="unbounded" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<complexType name="StudentType">
+		<sequence>
+			<element name="name" type="string" />
+			<element name="telephone" type="int" />
+			<element name="address" type="string" />
+		</sequence>
+		<attribute name="login" type="string" use="required" />
+	</complexType>
+
+	<complexType name="AddressType">
+		<sequence>
+			<element name="country" type="string" />
+			<element name="city"     type="string" />
+			<element name="street"  type="string" />
+		</sequence>
+	</complexType>
+</schema>

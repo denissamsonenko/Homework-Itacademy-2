@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import by.htp.itacademy.controller.command.impl.SaveNews;
+import by.htp.itacademy.controller.command.impl.ShowNews;
 
 public class CommandProvider {
 
@@ -11,6 +12,7 @@ public class CommandProvider {
 
 	public CommandProvider() {
 		commands.put(ParameterName.SAVE_NEWS, new SaveNews());
+		commands.put(ParameterName.SHOW_NEWS, new ShowNews());
 	}
 	
 	public Command getCommand(String commandName) {

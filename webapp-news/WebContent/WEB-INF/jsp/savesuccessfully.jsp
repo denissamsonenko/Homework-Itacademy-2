@@ -4,14 +4,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>News Save</title>
 </head>
 <body>
 <div>
-News SAVE DB
+News SAVE DB Successfully
 </div>
 <a href = "index.jsp" >
 Create news
 </a>
+<form action="shownews" metod="post">
+<input type="hidden" name="command" value="show_news">
+<input type="submit" name="sub" value="gonews" />
+</form>
 </body>
 </html>
