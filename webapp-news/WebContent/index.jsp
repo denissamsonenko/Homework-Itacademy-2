@@ -10,16 +10,18 @@
 <form action="controller" method="post">
 	<input type="hidden" name="command" value="save_news">
 	<div>
-		<textarea name="title" placeholder="title" maxlength="100"> title</textarea>
+		<textarea name="title" placeholder="title" maxlength="100"></textarea>
 	</div>
 	<div>
-		<textarea name="brief" placeholder="title" maxlength="200"> brief</textarea>
+		<textarea name="brief" placeholder="brief" maxlength="200"></textarea>
 	</div>
 	<div>
-	<textarea name="content" placeholder="title" maxlength="200"> content</textarea>	
+		<textarea name="content" placeholder="content" maxlength="200"></textarea>	
 	</div>
-	<input type="submit" name="sub" value="Send" />
-	<button type="reset">reset</button>
+		<input type="submit" name="sub" value="Send" />
+		<button type="reset">reset</button>
 </form>	
+<br>
+<a href = "controller?command=show_news">Show all news</a>
 </body>
 </html>

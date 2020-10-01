@@ -10,40 +10,54 @@ import by.htp.itacademy.service.NewsService;
 import by.htp.itacademy.service.ServiceException;
 
 public class NewsServiceImpl implements NewsService{
-	private boolean value;
+
+	private DAOProvider provider = DAOProvider.getInstance();
+	private NewsDAO newsDAO = provider.getNewsdao();
+	
+	@Override
+	public void save(News news) throws ServiceException {
+		try {
+			newsDAO.save(news);
+		} catch (DAOException e) {
+			throw new ServiceException(e);
+		}
+	}
 
 	@Override
-	public void saveNews(News news) throws ServiceException {
-		
-		DAOProvider daoProvider = DAOProvider.getInstance();
-		NewsDAO newsDao = daoProvider.getNewsdao(); 		
-		
+	public void update(News news, int id) throws ServiceException {
 		try {
-			newsDao.save(news);
+			newsDAO.update(news, id);
+		} catch (DAOException e) {
+			throw new ServiceException(e);
+		}
+	}
+
+	@Override
+	public void delete(int id) throws ServiceException {
+		try {
+			newsDAO.delete(id);
+		} catch (DAOException e) {
+			throw new ServiceException(e);
+		}	
+	}
+
+	@Override
+	public void find(int id) throws ServiceException {
+		try {
+			newsDAO.find(id);
 		} catch (DAOException e) {
 			throw new ServiceException(e);
 		}		
 	}
 
 	@Override
-	public boolean newsExists(News news) throws ServiceException {
-		
-		DAOProvider daoProvider = DAOProvider.getInstance();
-		NewsDAO newsDao = daoProvider.getNewsdao(); 
-		
-		List <News> list = null;
+	public List<News> findAll() throws ServiceException {
+		List<News> listNews;
 		try {
-			list = newsDao.findAll();
+			listNews = newsDAO.findAll();
 		} catch (DAOException e) {
 			throw new ServiceException(e);
 		}
-	
-		for (News news2 : list) {
-			if(news2.getTitle().equals(news.getTitle())||
-					news2.getBrief().equals(news.getBrief())||
-					news2.getContent().equals(news.getContent())) { 
-				value = true;
-			}else value =false;			
-		}return value;		
-	}
+		return listNews;
+	}	
 }

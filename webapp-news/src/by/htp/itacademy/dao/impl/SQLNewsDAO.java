@@ -31,7 +31,7 @@ public class SQLNewsDAO implements NewsDAO{
 			"DELETE FROM news WHERE id=? ";
 	
 	@Override
-	public void delete(Integer id) throws DAOException {
+	public void delete(int id) throws DAOException {
 		Connection con = null;
 		PreparedStatement ps = null;
 
@@ -50,7 +50,7 @@ public class SQLNewsDAO implements NewsDAO{
 	}
 	
 	@Override
-	public Optional<News> find(Integer id) throws DAOException {
+	public Optional<News> find(int id) throws DAOException {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet resultSet;
@@ -131,7 +131,7 @@ public class SQLNewsDAO implements NewsDAO{
 	}
 	
 	@Override
-	public void update(News news, Integer id) throws DAOException {
+	public void update(News news, int id) throws DAOException {
 		Connection con = null;
 		PreparedStatement ps = null;
 

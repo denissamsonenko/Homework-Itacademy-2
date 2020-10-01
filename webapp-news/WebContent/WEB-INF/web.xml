@@ -28,4 +28,19 @@
   <url-pattern>/shownews</url-pattern> 
   </servlet-mapping>
   
+  <servlet-mapping>
+  <servlet-name>Controller</servlet-name>
+  <url-pattern>/update</url-pattern> 
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  <servlet-name>Controller</servlet-name>
+  <url-pattern>/delete</url-pattern> 
+  </servlet-mapping>
+  
+    <servlet-mapping>
+  <servlet-name>Controller</servlet-name>
+  <url-pattern>/findid</url-pattern> 
+  </servlet-mapping>
+  
 </web-app>

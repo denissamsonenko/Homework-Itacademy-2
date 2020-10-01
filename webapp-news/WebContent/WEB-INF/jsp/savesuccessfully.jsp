@@ -13,9 +13,7 @@ News SAVE DB Successfully
 <a href = "index.jsp" >
 Create news
 </a>
-<form action="shownews" metod="post">
-<input type="hidden" name="command" value="show_news">
-<input type="submit" name="sub" value="gonews" />
-</form>
+<br>
+<a href = "controller?command=show_news">Show all news</a>
 </body>
 </html>
