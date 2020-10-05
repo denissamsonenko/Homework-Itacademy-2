@@ -8,6 +8,7 @@ import by.htp.itacademy.dao.NewsDAO;
 import by.htp.itacademy.entity.News;
 import by.htp.itacademy.service.NewsService;
 import by.htp.itacademy.service.ServiceException;
+import by.htp.itacademy.service.validation.Validation;
 
 public class NewsServiceImpl implements NewsService{
 
@@ -17,16 +18,20 @@ public class NewsServiceImpl implements NewsService{
 	@Override
 	public void save(News news) throws ServiceException {
 		try {
+			if(Validation.isCorrect(news)) {
 			newsDAO.save(news);
+			}else {
+				throw new ServiceException("Invalid news lenght");
+			}
 		} catch (DAOException e) {
 			throw new ServiceException(e);
 		}
 	}
 
 	@Override
-	public void update(News news, int id) throws ServiceException {
+	public void update(News news) throws ServiceException {
 		try {
-			newsDAO.update(news, id);
+			newsDAO.update(news);
 		} catch (DAOException e) {
 			throw new ServiceException(e);
 		}
@@ -42,12 +47,14 @@ public class NewsServiceImpl implements NewsService{
 	}
 
 	@Override
-	public void find(int id) throws ServiceException {
+	public News find(int id) throws ServiceException {
+		News news;
 		try {
-			newsDAO.find(id);
+			news = newsDAO.find(id);
+			return news;
 		} catch (DAOException e) {
 			throw new ServiceException(e);
-		}		
+		}
 	}
 
 	@Override

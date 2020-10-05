@@ -6,7 +6,7 @@ public class DBResourceManager {
 	
 	private final static DBResourceManager instance = new DBResourceManager();
 	private ResourceBundle bundle =
-			ResourceBundle.getBundle("by.htp.itacademy.dao.pool.db");
+			ResourceBundle.getBundle("db");
 
 	public static DBResourceManager getInstance() {
 		return instance;

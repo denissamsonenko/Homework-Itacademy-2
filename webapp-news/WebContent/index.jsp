@@ -19,7 +19,7 @@
 		<textarea name="content" placeholder="content" maxlength="200"></textarea>	
 	</div>
 		<input type="submit" name="sub" value="Send" />
-		<button type="reset">reset</button>
+		<input type="reset" name="reset" value="reset">
 </form>	
 <br>
 <a href = "controller?command=show_news">Show all news</a>

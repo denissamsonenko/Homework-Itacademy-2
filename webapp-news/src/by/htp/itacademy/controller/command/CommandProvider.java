@@ -5,6 +5,7 @@ import java.util.Map;
 
 import by.htp.itacademy.controller.command.impl.DeleteNews;
 import by.htp.itacademy.controller.command.impl.FindByIdNews;
+import by.htp.itacademy.controller.command.impl.FindForDelete;
 import by.htp.itacademy.controller.command.impl.UpdateNews;
 import by.htp.itacademy.controller.command.impl.SaveNews;
 import by.htp.itacademy.controller.command.impl.ShowNews;
@@ -18,7 +19,8 @@ public class CommandProvider {
 		commands.put(ParameterName.SHOW_NEWS, new ShowNews());
 		commands.put(ParameterName.UPDATE_NEWS, new UpdateNews());
 		commands.put(ParameterName.FIND_BY_ID, new FindByIdNews());
-		commands.put(ParameterName.DELETE_NEWS, new DeleteNews() );
+		commands.put(ParameterName.DELETE_NEWS, new DeleteNews());
+		commands.put(ParameterName.FIND_FOR_DELETE, new FindForDelete() );
 	}
 	
 	public Command getCommand(String commandName) {

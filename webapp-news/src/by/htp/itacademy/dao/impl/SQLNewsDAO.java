@@ -8,8 +8,6 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
 import by.htp.itacademy.dao.DAOException;
 import by.htp.itacademy.dao.NewsDAO;
 import by.htp.itacademy.dao.pool.ConnectionPool;
@@ -25,8 +23,8 @@ public class SQLNewsDAO implements NewsDAO{
 			"SELECT * FROM news";
 	private static final String NEWS_SELECT_ID = 
 			"SELECT * FROM news WHERE id = ?";
-	private static final String NEWS_UPDATE_TITLE_BY_ID = 
-			"UPDATE news SET title = ? WHERE id = ?";
+	private static final String NEWS_UPDATE_BY_ID = 
+			"UPDATE news SET title = ?, brief =?, content =? WHERE id = ?";
 	private static final String NEWS_DELETE_BY_ID =
 			"DELETE FROM news WHERE id=? ";
 	
@@ -50,11 +48,11 @@ public class SQLNewsDAO implements NewsDAO{
 	}
 	
 	@Override
-	public Optional<News> find(int id) throws DAOException {
+	public News find(int id) throws DAOException {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet resultSet;
-		
+		News news = null;
 		try {
 			con = pool.takeConnection();
 			ps = con.prepareStatement(NEWS_SELECT_ID);
@@ -66,14 +64,14 @@ public class SQLNewsDAO implements NewsDAO{
 				String brief = resultSet.getString("brief");
 				String content = resultSet.getString("content");
 				LocalDate date = LocalDate.parse((resultSet.getString("date")));
-				return Optional.of(new News(title,brief, content, date)); 
+				news = new News(id, title, brief, content, date);
 			}	
-			return Optional.empty();
 		} catch (SQLException e) {
 			throw new DAOException(e);
 		}finally {
 			pool.closeConnection(con, ps);
 		}
+		return news;
 	}
 	
 	@Override
@@ -131,17 +129,18 @@ public class SQLNewsDAO implements NewsDAO{
 	}
 	
 	@Override
-	public void update(News news, int id) throws DAOException {
+	public void update(News news) throws DAOException {
 		Connection con = null;
 		PreparedStatement ps = null;
 
 		try {
-
 			con = pool.takeConnection();
-			ps = con.prepareStatement(NEWS_UPDATE_TITLE_BY_ID);
+			ps = con.prepareStatement(NEWS_UPDATE_BY_ID);
 
 			ps.setString(1, news.getTitle());
-			ps.setInt(2, id);
+			ps.setString(2, news.getBrief());
+			ps.setString(3, news.getContent());
+			ps.setInt(4, news.getId());
 			
 			ps.executeUpdate();
 		} catch (SQLException e) {

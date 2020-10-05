@@ -6,5 +6,6 @@ public enum ParameterName {
 	SHOW_NEWS,
 	UPDATE_NEWS,
 	FIND_BY_ID,
-	DELETE_NEWS
+	DELETE_NEWS,
+	FIND_FOR_DELETE
 }

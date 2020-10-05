@@ -5,15 +5,11 @@
 <html>
 <head>
 <meta content = "text/html" charset="UTF-8">
-<title>Insert title here</title>
+<title>default</title>
 </head>
 <body>
-	<h4> <c:out  value = "${requestScope.error}"/><br>	</h4>
-	<a href = "index.jsp">go to create news</a><br>
+	<h4> <c:out  value = "${requestScope.error}"/><br></h4>
+	<a href = "index.jsp">main page</a><br>
 	
-<form action="shownews" metod="post">
-	<input type="hidden" name="command" value="show_news">
-	<input type="submit" name="sub" value="gonews" />
-</form>
 </body>
 </html>

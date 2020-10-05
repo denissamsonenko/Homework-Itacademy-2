@@ -23,14 +23,19 @@ public class News implements Serializable{
 	}
 	
 	public News(int id, String title, String brief, String content, LocalDate date) {
-		super();
 		this.id = id;
 		this.title = title;
 		this.brief = brief;
 		this.content = content;
 		this.date = date;
 	}
-
+	
+	public News(int id, String title, String brief, String content) {
+		this.id = id;
+		this.title = title;
+		this.brief = brief;
+		this.content = content;
+	}
 
 	public int getId() {
 		return id;
