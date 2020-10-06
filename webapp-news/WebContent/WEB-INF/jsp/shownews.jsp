@@ -14,6 +14,6 @@
 	<div><c:out value="${news.content}"></c:out></div>
 	<div><a href="controller?command=find_for_delete&id=${news.id}">Edit</a></div>
 	<div><a href="controller?command=delete_news&id=${news.id}">delete</a></div>
-	<div><a href = "controller?command=show_news">Show all news</a></div>
+	<div><a href="controller?command=show_news">Show all news</a></div>
 </body>
 </html>

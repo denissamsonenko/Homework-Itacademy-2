@@ -14,7 +14,6 @@ import by.htp.itacademy.service.NewsService;
 import by.htp.itacademy.service.ServiceException;
 import by.htp.itacademy.service.ServiceProvider;
 
-
 public class SaveNews implements Command {
 	
 	private static final String PARAMETR_TITLE = "title";
@@ -28,19 +27,19 @@ public class SaveNews implements Command {
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
-		News news = new News();
 		String page;
+		News news = new News();
 		news.setTitle(request.getParameter(PARAMETR_TITLE));
 		news.setBrief(request.getParameter(PARAMETR_BRIEF));
 		news.setContent(request.getParameter(PARAMETR_CONTENT));
 		news.setDate(LocalDate.now());
 		try {
-			if (news.getTitle()==""||news.getBrief()==""||news.getContent()=="") {
+			if ("".equals(news.getTitle())||"".equals(news.getBrief())||"".equals(news.getContent())) {
 				request.setAttribute("error","the field must not be empty ");
 				page = PAGE_DEFAULT;
 			}else {
 				page = PAGE_SUCCESSFULLY;
-			ns.save(news);
+				ns.save(news);
 			}
 		} catch (ServiceException e) {
 			throw new ServletException(e);

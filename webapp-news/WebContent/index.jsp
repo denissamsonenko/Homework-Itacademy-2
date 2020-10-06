@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title>Index</title>
-	<meta  content="text/html" charset="utf-8">
+	<meta  content="text/html" charset="UTF-8">
 </head>
 <body>
 <form action="controller" method="post">

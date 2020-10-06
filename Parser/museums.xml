@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<breakfast-menu>
+    <food id="123">
+        <name>nnn</name>
+        <price>333</price>
+        <description>ddd</description>
+        <calories>234</calories>
+    </food>
+    <food id="345">
+        <name>bbb</name>
+        <price>333</price>
+        <description>vvvv</description>
+        <calories>234</calories>
+    </food>
+</breakfast-menu>
