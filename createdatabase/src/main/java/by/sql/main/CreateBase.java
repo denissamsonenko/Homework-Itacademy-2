@@ -24,6 +24,7 @@ public class CreateBase {
 	private final static String INSERT_NEW_USER_INTO_USERS = "INSERT INTO users(first_name, last_name, email, password, password_salt, last_update) VALUES(?,?,?,?,?,?)";
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/jd2-example?useSSL=false", "root", "24041987");
 		PreparedStatement ps = con.prepareStatement(INSERT_NEW_USER_INTO_USERS);
